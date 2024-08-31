@@ -11,11 +11,11 @@ public class Exercicio1 {
         int n2;
 
         System.out.println("Digite o primeiro número:");
-        Scanner scannerLeia = new Scanner(System.in);
-        n1 = scannerLeia.nextInt();
+        Scanner Leia = new Scanner(System.in);
+        n1 = Leia.nextInt();
 
        System.out.println("Digite o segudo número: ");
-        n2 = scannerLeia.nextInt();
+        n2 = Leia.nextInt();
 
         System.out.println("A soma é: "+(n1+n2));
 
