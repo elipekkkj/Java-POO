@@ -15,5 +15,6 @@ fahrenheit = leia.nextDouble();
 celsius = (fahrenheit - 32) / 1.8;
 System.out.printf("Celsius:%.2f", celsius);
 
+
     }
 }
