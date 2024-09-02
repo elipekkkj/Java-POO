@@ -15,6 +15,6 @@ public class Lista2Application {
 		//Exercicio4.resolucao();
 		//Exercicio5.resolucao();
 		//Exercicio6.resolucao();
-		
+		//Exercicio7.resolucao();
 	}
 }
