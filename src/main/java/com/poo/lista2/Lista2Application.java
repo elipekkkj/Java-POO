@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class Lista2Application {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		SpringApplication.run(Lista2Application.class, args); 
 
 		//Exercicio1.resolucao();
@@ -16,5 +16,6 @@ public class Lista2Application {
 		//Exercicio5.resolucao();
 		//Exercicio6.resolucao();
 		//Exercicio7.resolucao();
+		//Exercicio8.resolucao();
 	}
 }
