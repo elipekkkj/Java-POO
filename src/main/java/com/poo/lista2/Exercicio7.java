@@ -3,7 +3,7 @@ package com.poo.lista2;
 import java.util.Scanner;
 
 public class Exercicio7 {
-    public static void resolucao2() {
+    public static void resolucao() {
         
         double numero1, numero2;
         
