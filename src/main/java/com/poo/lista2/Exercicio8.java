@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class Exercicio8 {
-        public static void resolucao2() throws InterruptedException{
+        public static void resolucao() throws InterruptedException{
             Scanner leia = new Scanner(System.in);
 
             int tentativa = 0;
