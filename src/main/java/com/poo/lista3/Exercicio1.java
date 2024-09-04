@@ -12,13 +12,11 @@ import java.util.concurrent.TimeUnit;
             Scanner leia = new Scanner(System.in);
             numeroDigitado = leia.nextInt();
             
-            do {
-                System.out.println("Digite um número valido:");
-                numeroDigitado = leia.nextInt();  
-    
-        } while (numeroDigitado < 1 || numeroDigitado > 59);
-    
-    
+            
+    while (numeroDigitado < 1 || numeroDigitado > 59) {
+        System.out.println("Digite um número valido:");
+                numeroDigitado = leia.nextInt();
+    }
         for (int i = 0; i <= numeroDigitado; i++) {
                 System.out.println( "00:" + i );
                 TimeUnit.SECONDS.sleep(1);
