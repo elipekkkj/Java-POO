@@ -33,7 +33,7 @@ public class Exercicio2 {
         }
         System.out.println("Total das vendas do dia: R$" + totalVendas);
         TimeUnit.SECONDS.sleep(3);
-        System.out.println("Maior valor de venda: " + valorMaior);
-        System.out.println("Menor valor de venda: " + valorMenor);
+        System.out.println("Maior valor de venda: R$" + valorMaior);
+        System.out.println("Menor valor de venda: R$" + valorMenor);
     }
 }
