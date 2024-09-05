@@ -21,7 +21,5 @@ public class Exercicio1 {
             totalVendas += venda;
         }
         System.out.println("Total das vendas do dia: R$" + totalVendas);
-
-    leia.close();
     }
 }
