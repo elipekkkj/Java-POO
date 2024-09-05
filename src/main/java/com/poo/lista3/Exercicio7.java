@@ -5,10 +5,6 @@ import java.util.Scanner;
 public class Exercicio7 {
     public static void resolucao() {
         
-/*6) Escreva um programa que seja capaz de desenhar uma retangulo de
-asteriscos. O usuário deverá informar a largura e a altura que ele deseja que o
-retangulo tenha.*/
-
         int largura;
         int altura;
         
