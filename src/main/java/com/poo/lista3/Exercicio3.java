@@ -21,10 +21,8 @@ public class Exercicio3 {
     for (int i = inicio; i <= fim; i++) {
         if (i % 2 == 0) {
             System.out.println(i);
+            }
         }
-    }
-
-    scanner.close();
     }
 }
 
