@@ -1,58 +1,66 @@
 package com.poo.lista4;
 
-import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
-
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
 
 public class Exercicio5 {
-    public static void resolucao() throws InterruptedException {
 
-        Scanner leia = new Scanner(System.in);
-        int opcao;
-        ArrayList<String> lista = new ArrayList<>();
+    public static void resolucao()throws InterruptedException {
         
-        do {
+        ArrayList<String> listaCompras = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
+
+        int opcao = 0;
+
+    
+        while (opcao != 3) {
             
-            System.out.println("\n--- Lista de Compras ---");
-            System.out.println("1. Inserir item");
-            System.out.println("2. Ver lista de compras");
+            System.out.println("\n****** Lista de Compras ******");
+            System.out.println("1. Inserir itens");
+            System.out.println("2. Ver a lista de compras");
             System.out.println("3. Sair");
-            System.out.print("Escolha uma opção: ");
-            opcao = leia.nextInt();
-            leia.nextLine();
+            System.out.print("Escolha a opção:");
             
-        
-            switch (opcao) {
-                case 1: 
-                    System.out.println("Insira o item desejado: ");
-                    String item = leia.nextLine();
-                    lista.add(item);
-                    System.out.print("\033[H\033[2J");
-                    System.out.flush();
-                    System.out.println("Item adicionado com sucesso!");
-                    TimeUnit.SECONDS.sleep(2);
-                    break;
-                case 2:
-                    if (lista.isEmpty()) {
-                        System.out.println("Lista está vazia !");
-                        TimeUnit.SECONDS.sleep(3);
-                        System.out.print("\033[H\033[2J");
-                        System.out.flush();
+            opcao = scanner.nextInt();
+            scanner.nextLine(); 
 
-                    }else{
-                    System.out.println("----------- Lista -----------");
+            switch (opcao) {
+                case 1:
+                
+                    System.out.print("Digite o nome do item:");
+                    String item = scanner.nextLine();
+                    listaCompras.add(item);
+                    System.out.println("Item '" + item + "' adicionado à lista.");
+                    break;
+                
+            
+                case 2:
+                    
+                    System.out.println("\nLista de Compras:");
+                    
+                    if (listaCompras.isEmpty()) {
+                        
+                        System.out.println("A lista está vazia.");
+                    
+                    } else {
+                        for (int i = 0; i < listaCompras.size(); i++) {
+                            
+                            System.out.println((i + 1) + ". " + listaCompras.get(i));
+                        }
                     }
-                    for(String i : lista)
-                    System.out.println("- " + i);
+                    break;
+                
+                
+                case 3:
+                    
+                    System.out.println("Saindo...");
                     break;
                 default:
-                System.out.println("Programa Encerrado !");
-                System.exit(0);
-                    break;
+                    
+                    System.out.println("Opção inválida, tente novamente.");
             }
-        } while (opcao != 3);
+        }
+
+        scanner.close();
     }
 }
