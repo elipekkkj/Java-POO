@@ -1,97 +1,95 @@
 package com.poo.lista4;
 
-    import java.util.ArrayList;
-    import java.util.HashMap;
-    import java.util.List;
-    import java.util.Map;
-    import java.util.Scanner;
-    import java.util.concurrent.TimeUnit;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Exercicio7 {
+
+    public static void resolucao()throws InterruptedException {
+        
+    ArrayList<String> listaProdutos = new ArrayList<>();
+    ArrayList<String> listaPrecos = new ArrayList<>();
     
-    public class Exercicio7 {
-        public static void resolucao() throws InterruptedException {
-    
-            Scanner leia = new Scanner(System.in);
-            int opcao;
-            ArrayList<String> lista = new ArrayList<>();
-            Map<String, Double> compra = new HashMap<>();
+    Scanner scanner = new Scanner(System.in);
+
+    int opcao = 0;
+
+    while (opcao != 3) {
             
-            do {
+    System.out.println("\n****** Lista de Compras ******");
+    System.out.println("1. Inserir itens");
+    System.out.println("2. Ver a lista de compras");
+    System.out.println("3. Remover item");
+    System.out.println("4. Sair");
+    System.out.print("Escolha a opção:");
+            
+    opcao = scanner.nextInt();
+            scanner.nextLine(); 
+
+            switch (opcao) {
+                case 1:
                 
-                System.out.println("\n--- Lista de Compras ---");
-                System.out.println("1. Inserir item");
-                System.out.println("2. Ver lista de compras");
-                System.out.println("3. Remover Item");
-                System.out.println("4. Sair");
-                System.out.print("Escolha uma opção: ");
-                opcao = leia.nextInt();
-                leia.nextLine();
+                    System.out.print("Digite o nome do item:");
+                    String item = scanner.nextLine();
+                    System.out.print("Digite o preço do item:");
+                    String preco = scanner.nextLine();
+                    listaProdutos.add(item);
+                    listaPrecos.add(preco);
+                    System.out.println("Item '" + item + "' adicionado à lista.");
+                    break;
                 
             
-                switch (opcao) {
-                    case 1: 
-                        System.out.println("Insira o item desejado: ");
-                        String item = leia.nextLine();
-                        
-                        System.out.println("Digite o preço do produto: ");
-                        Double preco = leia.nextDouble();
-    
-                        compra.put(item, preco);
-                        
-                        lista.add(item);
-                        
-                        System.out.print("\033[H\033[2J");
-                        System.out.flush();
-                        System.out.println("Item adicionado com sucesso!");
-                        TimeUnit.SECONDS.sleep(2);
-                        break;
-                    case 2:
-                        if (lista.isEmpty()) {
-                            System.out.println("Lista está vazia !");
-                            TimeUnit.SECONDS.sleep(3);
-                            System.out.print("\033[H\033[2J");
-                            System.out.flush();
-    
-                        }else{
-                        System.out.println("----------- Lista -----------");
-                        List<Map.Entry<String, Double>> list = new ArrayList<>((compra.entrySet()));
-                        for(String i : lista){
-                        System.out.println("- " + compra);
-                        break;
-                        }
-                    }
-                        break;
-                    case 3:
-                        if (lista.isEmpty()) {
-                        System.out.println("Não tem item para remover");
-                        TimeUnit.SECONDS.sleep(3);
-                        System.out.print("\033[H\033[2J");
-                        System.out.flush();
-                    }else{
-                    System.out.println("----------- Lista -----------");
+                case 2:
                     
-                    for(int i = 0; i < lista.size(); i++){
-                        System.out.println((i+1) + "- " + lista.get(i));
-                    }
-                    System.out.println("Escolha o número que quer remover da lista: ");
-                    int removerItem = leia.nextInt();
-                    if (removerItem > 0 && removerItem <= lista.size()) {
-                        lista.remove(removerItem - 1);
-                        System.out.println("Item removido com sucesso !");
-                        TimeUnit.SECONDS.sleep(3);
+                    System.out.println("\nLista de Compras:");
+                    
+                    if (listaProdutos.isEmpty()) {
+                        
+                        System.out.println("A lista está vazia.");
+                    
                     } else {
-                        System.out.println("Número invalido, tente novamente!");
+                        for (int i = 0; i < listaProdutos.size(); i++) {
+                            
+                            System.out.println((i + 1) + ". " + listaProdutos.get(i) + " R$ " + listaPrecos.get(i) );
                         }
                     }
-                        break;
+                    break;
+                
+                    
+                    case 3:
+                
+                    if (listaProdutos.isEmpty()) {
+                        System.out.println("A lista está vazia. Não há o que remover.");
+                    } else {
+                        System.out.println("Digite o número do item para remove-lo:");
+                        
+                        for (int i = 0; i < listaProdutos.size(); i++) {
+                            System.out.println((i + 1) + ". " + listaProdutos.get(i));
+                        }
+                        
+                        int itemRemover = scanner.nextInt();
+                        
+                        if (itemRemover > 0 && itemRemover <= listaProdutos.size()) {
+                            String removido = listaProdutos.remove(itemRemover - 1);
+                            System.out.println("Item '" + removido + "' removido da lista.");
+                        } else {
+                            System.out.println("Número inválido.");
+                        }
+                    }
+                    break;
+                
+                    
+                    
                     case 4:
-                    System.out.println("Programa Encerrado !");
-                    System.exit(0);
-                        break;
+                
+                    System.out.println("Saindo...");
+                    break;
                     default:
-                    System.out.println("Número invalido, tente novamente!");
-                        break;
+                    
+                    System.out.println("Opção inválida, tente novamente.");
             }
-        } while (opcao != 4);
+        }
+
+        scanner.close();
     }
 }
-
