@@ -11,9 +11,9 @@ public class Exercicio7 {
     ArrayList<String> listaPrecos = new ArrayList<>();
     
     Scanner scanner = new Scanner(System.in);
-
+    
     int opcao = 0;
-
+    
     while (opcao != 3) {
             
     System.out.println("\n****** Lista de Compras ******");
@@ -38,7 +38,7 @@ public class Exercicio7 {
                     System.out.println("Item '" + item + "' adicionado à lista.");
                     break;
                 
-            
+                
                 case 2:
                     
                     System.out.println("\nLista de Compras:");
@@ -54,10 +54,10 @@ public class Exercicio7 {
                         }
                     }
                     break;
-                
+                    
                     
                     case 3:
-                
+                    
                     if (listaProdutos.isEmpty()) {
                         System.out.println("A lista está vazia. Não há o que remover.");
                     } else {
@@ -77,11 +77,11 @@ public class Exercicio7 {
                         }
                     }
                     break;
-                
+                    
                     
                     
                     case 4:
-                
+                    
                     System.out.println("Saindo...");
                     break;
                     default:
@@ -89,7 +89,7 @@ public class Exercicio7 {
                     System.out.println("Opção inválida, tente novamente.");
             }
         }
-
+        
         scanner.close();
     }
 }
