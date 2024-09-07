@@ -13,7 +13,7 @@ public class Exercicio1 {
         double vendas[] = new double [numeroVendas];
         double totalVendas = 0;
 
-        for (int i = 0; i <= numeroVendas; i++) {
+        for (int i = 0; i < numeroVendas; i++) {
             System.out.println("Digite o valor da venda " + (i + 1) + ":");
             vendas[i] = leia.nextDouble();
         }
